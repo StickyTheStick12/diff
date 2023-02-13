@@ -191,7 +191,9 @@ def DestBox(sbox, y):
     offset = (3 - (sbox-1)) * 4
 
     Y = y << offset
-
+    
+    # as we stated in the text. Addubg a roundkey wont impact the differntial.
+    
     perm = appPerm(Y)
     reachedSbox = {}
 
