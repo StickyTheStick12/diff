@@ -20,7 +20,7 @@ def keygen(p=False) -> str:
     return key
 
 
-def appSbox(bits: str, p=False) -> str:
+def appSbox(bits: str, p=False) -> int:
     s = ""
 
     for i in range(4):
@@ -29,7 +29,7 @@ def appSbox(bits: str, p=False) -> str:
     if p:
         print(s)
 
-    return s
+    return int(s, 16)
 
 
 def appPerm(bits: str) -> str:
@@ -38,7 +38,7 @@ def appPerm(bits: str) -> str:
     for i in range(16):
         newBits[perm[i]] = bits[i]
 
-    return "".join(newBits)
+    return int("".join(newBits), 16)
 
 
 def encrypt(text: str, key: str, verbose=False) -> int:
